@@ -1,0 +1,6 @@
+<div class="card">
+    <h6 class="card-header">{{ convertToDate( { dt: weatherDay.dt }) | date: dateFormat }}</h6>
+    <div class="card-body">
+        <h6 class="card-title">Daytime temperature: {{ convertToStandart(daytimeTemp: weatherDay.main.temp) }}</h6>
+    </div>
+</div>

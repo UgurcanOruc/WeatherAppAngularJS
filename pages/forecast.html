@@ -1,0 +1,24 @@
+
+<h2>Forecast for {{ city }} <a href="#/" class="btn btn-success ml-5">Back to City Selection</a></h2> 
+
+<p class="mt-3 mb-4">
+    Days: 
+  <a href="#/forecast/2" 
+        ng-class="{ 'btn btn-warning': days !== '2', 'btn btn-primary': days === '2' }">2</a> 
+| <a href="#/forecast/5" 
+        ng-class="{ 'btn btn-warning': days !== '5', 'btn btn-primary': days === '5' }">5</a> 
+| <a href="#/forecast/7" 
+        ng-class="{ 'btn btn-warning': days !== '7', 'btn btn-primary': days === '7' }">7</a>
+</p>
+
+<div class="mt-2" ng-repeat="w in weatherResult.list">
+    <div class="row">
+        <div class="col-md-4">
+           <weather-report weather-day="w" 
+                           convert-to-standard="convertToCelcius(daytimeTemp)"
+                           convert-to-date="convertToDate(dt)"
+                           date-format="MMM d, y">
+            </weather-report>
+        </div>
+    </div>
+</div>
